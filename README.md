@@ -46,8 +46,7 @@ Esta API foi criada como parte de uma mentoria na escola **EE Barão de Jundiaí
 - **URL**: `/api/eventos/{id}`
 - **Método**: `PUT`
 - **Corpo da Requisição**:
-  
-  
+    
 ### Excluir Evento na Agenda
 
 - **URL**: `/api/agenda/{id}`
@@ -65,8 +64,8 @@ Esta API foi criada como parte de uma mentoria na escola **EE Barão de Jundiaí
    ```
 4. **Instale o certificado**:
    ```bash
-  dotnet dev-certs https --trust
-  ```
+    dotnet dev-certs https --trust
+    ```
 5. **Execute a aplicação**:
    - Para rodar em **HTTP**:
      ```bash
