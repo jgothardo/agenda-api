@@ -56,17 +56,31 @@ Esta API foi criada como parte de uma mentoria na escola **EE Barão de Jundiaí
 ## Como Executar a Aplicação
 
 1. **Clone o repositório**:
-   git clone https://github.com/jgothardo/agenda-api.git cd agenda-api
-   
-2. **Instale as dependências**:
-   
+   ```bash
+   git clone https://github.com/jgothardo/agenda-api.git
+   ```
+3. **Instale as dependências**:
+   ```bash
    dotnet restore
+   ```
+4. **Instale o certificado**:
+   ```bash
+  dotnet dev-certs https --trust
+  ```
+5. **Execute a aplicação**:
+   - Para rodar em **HTTP**:
+     ```bash
+     dotnet run --launch-profile http
+     ```
 
-3. **Execute a aplicação**:
-   dotnet run
+   - Para rodar em **HTTPS**:
+     ```bash
+     dotnet run --launch-profile https
+     ```
    
-4. **Acesse a documentação do Swagger**:
-   - Abra o navegador e vá para `https://localhost:5001/swagger` para visualizar e testar os endpoints da API.
+6. **Acesse a documentação do Swagger**:
+   - Para HTTP, abra o navegador e vá para `https://localhost:5002/swagger` para visualizar e testar os endpoints da API.
+   - Para HTTPS, abra o navegador e vá para `https://localhost:5001/swagger` para visualizar e testar os endpoints da API.
 
 ## Inicialização dos Dados
 
