@@ -3,6 +3,7 @@ using Agenda.API.Models;
 using Agenda.API.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
+using System.Globalization;
 
 namespace Agenda.API.Services
 {
@@ -108,9 +109,9 @@ namespace Agenda.API.Services
                     worksheet.Cells[row, 2].Value = evento.Nome;
                     worksheet.Cells[row, 3].Value = evento.Descricao;
                     worksheet.Cells[row, 4].Value = evento.DataInicio;
-                    worksheet.Cells[row, 4].Style.Numberformat.Format = "dd/MM/yyyy"; // Formato de data
+                    worksheet.Cells[row, 4].Value = evento.DataInicio.ToString("dd/MM/yyyy", new CultureInfo("pt-BR"));
                     worksheet.Cells[row, 5].Value = evento.DataFinal;
-                    worksheet.Cells[row, 5].Style.Numberformat.Format = "dd/MM/yyyy"; // Formato de data
+                    worksheet.Cells[row, 5].Value = evento.DataFinal.ToString("dd/MM/yyyy", new CultureInfo("pt-BR"));
                     worksheet.Cells[row, 6].Value = evento.Local;
                     row++;
                 }
@@ -134,8 +135,8 @@ namespace Agenda.API.Services
                         Id = int.Parse(worksheet.Cells[row, 1].Text),
                         Nome = worksheet.Cells[row, 2].Text,
                         Descricao = worksheet.Cells[row, 3].Text,
-                        DataInicio = DateTime.Parse(worksheet.Cells[row, 4].Text),
-                        DataFinal = DateTime.Parse(worksheet.Cells[row, 5].Text),
+                        DataInicio = DateTime.ParseExact(worksheet.Cells[row, 4].Text, "dd/MM/yyyy", new CultureInfo("pt-BR")),
+                        DataFinal = DateTime.ParseExact(worksheet.Cells[row, 5].Text, "dd/MM/yyyy", new CultureInfo("pt-BR")),
                         Local = worksheet.Cells[row, 6].Text
                     };
 

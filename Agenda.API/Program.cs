@@ -3,8 +3,12 @@ using Agenda.API.Services;
 using Agenda.API.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
+//var cultureInfo = new CultureInfo("pt-BR");
+//CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+//CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
 // Add services to the container.
 builder.Services.AddDbContext<AgendaContext>(options =>
@@ -31,14 +35,8 @@ using (var scope = app.Services.CreateScope())
 }
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Agenda API v1");
-    });
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
