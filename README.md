@@ -78,7 +78,7 @@ Esta API foi criada como parte de uma mentoria na escola **EE Barão de Jundiaí
      ```
    
 6. **Acesse a documentação do Swagger**:
-   - Para HTTP, abra o navegador e vá para `https://localhost:5002/swagger` para visualizar e testar os endpoints da API.
+   - Para HTTP, abra o navegador e vá para `http://localhost:5002/swagger` para visualizar e testar os endpoints da API.
    - Para HTTPS, abra o navegador e vá para `https://localhost:5001/swagger` para visualizar e testar os endpoints da API.
 
 ## Inicialização dos Dados
