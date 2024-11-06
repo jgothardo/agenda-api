@@ -29,7 +29,15 @@ Esta API foi criada como parte de uma mentoria na escola **EE Barão de Jundiaí
 - **URL**: `/api/agenda`
 - **Método**: `POST`
 - **Corpo da Requisição**:
-  
+   ```json
+   {
+     "id": 1,
+     "nome": "Feira de Ciências",
+     "descricao": "Evento anual onde os alunos apresentam seus projetos científicos.",
+     "dataInicio": "2024-11-05T09:00:00Z",
+     "dataFinal": "2024-11-05T17:00:00Z",
+     "local": "Ginásio da Escola"
+   }
   
 ### Listar Eventos na Agenda
 
@@ -46,7 +54,16 @@ Esta API foi criada como parte de uma mentoria na escola **EE Barão de Jundiaí
 - **URL**: `/api/eventos/{id}`
 - **Método**: `PUT`
 - **Corpo da Requisição**:
-    
+   ```json
+   {
+     "id": 1,
+     "nome": "Feira de Ciências",
+     "descricao": "Evento anual onde os alunos apresentam seus projetos científicos.",
+     "dataInicio": "2024-11-05T09:00:00Z",
+     "dataFinal": "2024-11-05T17:00:00Z",
+     "local": "Ginásio da Escola"
+   }
+  
 ### Excluir Evento na Agenda
 
 - **URL**: `/api/agenda/{id}`
