@@ -10,14 +10,17 @@ namespace Agenda.API.Services
     public class AgendaService : IAgendaService
     {
         private readonly AgendaContext _context;
-        private readonly string _excelFilePath = "Agenda.xlsx";
+        private readonly string _excelFilePath;
 
-        public AgendaService(AgendaContext context)
+        public AgendaService(AgendaContext context, IWebHostEnvironment env)
         {
             _context = context;
 
             // Initialize the Excel package
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            _excelFilePath = Path.Combine(env.WebRootPath, "Agenda.xlsx");
+
         }
 
         public void Initialize()
